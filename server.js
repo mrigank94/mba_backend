@@ -159,6 +159,7 @@ async function init() {
       pinCode: 560052,
       movies: [movie1._id, movie2._id, movie3._id],
       ownerId: client1._id,
+      numSeats: 88,
     });
     await Theatre.create({
       name: "PVR Cinemas - Kormangala",
@@ -167,6 +168,7 @@ async function init() {
       pinCode: 560095,
       movies: [movie1._id, movie2._id, movie4._id],
       ownerId: client1._id,
+      numSeats: 96,
     });
     await Theatre.create({
       name: "IMax",
@@ -183,6 +185,7 @@ async function init() {
       pinCode: 560094,
       movies: [movie5._id, movie4._id],
       ownerId: client2._id,
+      numSeats: 80,
     });
 
     await Theatre.create({
@@ -192,6 +195,7 @@ async function init() {
       pinCode: 411001,
       movies: [movie5._id, movie2._id],
       ownerId: client3._id,
+      numSeats: 64,
     });
     await Theatre.create({
       name: "Sonmarg Theatre",

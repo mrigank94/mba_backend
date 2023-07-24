@@ -72,9 +72,11 @@ exports.getAllTheatres = async (req, res) => {
  * Get the theatre based on theatre id
  */
 exports.getTheatre = async (req, res) => {
+  console.log(req.params.id);
   const theatre = await Theatre.findOne({
     _id: req.params.id,
   });
+  console.log(theatre);
   res.status(200).send(theatre);
 };
 
@@ -85,7 +87,6 @@ exports.updateTheatre = async (req, res) => {
   const savedTheatre = await Theatre.findOne({ _id: req.params.id });
 
   if (!savedTheatre) {
-    console.log("here 5");
     return res.status(400).send({
       message: "Theatre being updated doesn't exist",
     });
