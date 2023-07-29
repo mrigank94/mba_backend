@@ -8,11 +8,16 @@ const constants = require("../utils/constants");
  * Create  a new Theatre
  */
 exports.createTheatre = async (req, res) => {
+  const user = await User.findOne({
+    userId: req.userId,
+  });
+
   const theatreObject = {
     name: req.body.name,
     city: req.body.city,
     description: req.body.description,
     pinCode: req.body.pinCode,
+    ownerId: user._id,
   };
 
   const theatre = await Theatre.create(theatreObject);
